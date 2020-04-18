@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { AppProvider, Page } from '@shopify/polaris';
 import BasicTable from '../components/BasicTable';
-import './table.css';
 
-class App extends Component {
+
+class Data extends Component {
     render() {
 
         const headings = [
@@ -61,7 +61,7 @@ class App extends Component {
 
         return (
             <AppProvider>
-                <Page title="Data table">
+                <Page>
                     <BasicTable headings={headings} rows={rows} />
                 </Page>
             </AppProvider>
@@ -69,4 +69,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Data;
