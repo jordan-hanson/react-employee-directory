@@ -18,7 +18,9 @@ function App() {
         </div>
       </div>
       <div className="row">
-        <Data />
+        <div className="col">
+          <Data />
+        </div>
       </div>
     </div>
   );
