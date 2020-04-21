@@ -4,20 +4,11 @@ import BasicTable from '../components/BasicTable';
 
 
 class Data extends Component {
-    render() {
 
-        const headings = [
-            'Id',
-            'Name',
-            'Email',
-            'Phone #',
-            'Department',
-            'Title',
-            'Start Month',
-            'Current Y/N',
-        ];
-
-        const rows = [
+    state = {
+        filteredRows: [],
+        showFilter: false,
+        rows: [
             [
                 1,
                 "Katelyn Brown",
@@ -57,12 +48,36 @@ class Data extends Component {
                 '01/2016',
                 'N',
             ],
+        ]
+    }
+
+    updateFilteredArray(newArray) {
+        this.setState({ filteredRows: newArray, showFilter: true })
+    }
+    render() {
+        this.updateFilteredArray = this.updateFilteredArray.bind(this)
+        const headings = [
+            'Id',
+            'Name',
+            'Email',
+            'Phone #',
+            'Department',
+            'Title',
+            'Start Month',
+            'Current Y/N',
         ];
+
 
         return (
             <AppProvider>
                 <Page>
-                    <BasicTable headings={headings} rows={rows} />
+                    <BasicTable
+                        showFilter={this.state.showFilter}
+                        filteredRows={this.state.filteredRows}
+                        updateFilter={this.updateFilteredArray}
+                        headings={headings}
+                        rows={this.state.rows}
+                    />
                 </Page>
             </AppProvider>
         );
