@@ -82,7 +82,6 @@ export default class BasicTable extends React.Component {
                         <label htmlFor="type">Search By:</label>
                         <select onChange={this.handleDropDown} className="type" id="type">
                             <option defaultValue="search">Select Search By Type</option>
-                            <option value="department">Department</option>
                             <option value="current">Currently an Employee</option>
                         </select>
                     </div>
